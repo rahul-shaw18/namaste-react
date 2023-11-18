@@ -1,0 +1,62 @@
+
+/* Header Component  */
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.header .logo-container .logo{
+    width: 100px;
+}
+
+.header .nav-item{
+
+}
+
+.header .nav-items > ul{
+    display: flex;
+    list-style-type: none;
+    font-size: 24px;
+}
+
+.header .nav-items > ul > li{
+    padding: 10px;
+    margin: 10px;
+}
+
+/* Body Component */
+.body .res-container{
+    display: flex;
+
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+
+/* Restaurant Crad Component */
+
+.res-card{
+    width: 200px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 10px;
+}
+
+.res-card:hover{
+    cursor: pointer;
+    border: 1px solid red;
+}
+
+.res-card > img{
+    border-radius: 5px;
+    width: 100%;
+
+}
+
+.filter-btn{
+    margin: 10px;
+    cursor: pointer;
+}
