@@ -60,3 +60,17 @@
     margin: 10px;
     cursor: pointer;
 }
+
+.shimmers-containers{
+    display: flex;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+.shimmers-containers .shimmers{
+    width: 200px;
+    height: 400px;
+    border-radius: 5px;
+    margin: 5px;
+    background-color:rgb(240, 240, 240);
+}

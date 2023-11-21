@@ -57,7 +57,7 @@
 
 ### 1. What is `NPM`?
 
-npm is used to download different javascript modules/packages present in the npm repository. It is a 
+mpm is a package manager, npm is used to download different javascript modules/packages present in the npm repository. It is a 
 command used to run from client box to download different packages or modules in there project.
 So people call it `node package manager` but in npm documentation the full form of npm is never mentioned.
 npm allows to update, install and manage javascript packages
@@ -65,7 +65,7 @@ npm allows to update, install and manage javascript packages
 ### 2. What is Parcel/Webpack? Why do we need it?
 
 Parcel or Webpack is javascript package that works as a bundler for javascript framework like 
-react js or vue or andular. It handles many other features like transpiling of code, minification 
+react js or vue or angular. It handles many other features like transpiling of code, minification 
 of js files. They provide cross browser support of ui framework. It bundles CSS or images into 
 one single js files. This file is then loaded by browser when your web page is opened. 
 
@@ -455,3 +455,334 @@ Yes we can use React without ES6. So to make it work we to use React.createEleme
 
 ### Why do we need a useState hooks?
     This hook lets you declare a state variable and a function to update it. You can use multiple useState hooks in a single component to manage different pieces of state.
+
+### What is a Microservice?
+    A microservice is a software architecture style where a single application is developed as a set of small, independent services. Each of these services represents a specific business capability and can be developed, deployed, and scaled independently. Microservices are designed to be loosely coupled and communicate with each other through well-defined APIs (Application Programming Interfaces).
+
+    Key characteristics of microservices include:
+
+    1. **Independence:** Each microservice operates independently and can be developed and deployed separately. This enables teams to work on   different services without interfering with each other.
+
+    2. **Single Responsibility:** Microservices are designed to perform a specific business function, adhering to the Single Responsibility     Principle.
+
+    3. **Scalability:** Microservices can be scaled independently based on the demand for their specific functionality. This allows for more    efficient resource utilization.
+
+    4. **Resilience:** Failure in one microservice does not necessarily affect the entire application. The system can remain operational even   if some services are not available.
+
+    5. **Technology Diversity:** Different microservices can be implemented using different technologies, languages, and frameworks based on    the specific requirements of each service.
+
+    6. **Autonomous Deployment:** Microservices can be deployed independently of each other, allowing for continuous delivery and faster    release cycles.
+
+    7. **Ease of Understanding and Maintenance:** Smaller codebases and clear service boundaries make it easier to understand, develop, and     maintain microservices.
+
+    Microservices architecture is often contrasted with monolithic architecture, where an entire application is developed as a single,  tightly integrated unit. While microservices offer advantages in terms of flexibility, scalability, and resilience, they also introduce  challenges related to service communication, data consistency, and managing a distributed system. Successful implementation of   microservices requires careful consideration of these challenges and the adoption of appropriate tools and practices.
+
+### What is Monolith architecture?
+    Monolithic architecture is a traditional software design approach where an entire application is developed as a single, tightly integrated unit. In a monolithic architecture, all the components and modules of the application are interconnected and interdependent. The entire codebase is typically built, deployed, and scaled together.
+
+    Key characteristics of monolithic architecture include:
+
+    Single Codebase: The entire application is developed and maintained in a single codebase. All the components, modules, and functionalities are part of the same code.
+
+    Tight Integration: Components and modules within the application are tightly integrated, often sharing the same code, libraries, and databases.
+
+    Single Deployment Unit: The entire application is deployed as a single unit. When updates or changes are made to any part of the application, the entire application needs to be redeployed.
+
+    Scalability: Scalability is achieved by replicating the entire application, rather than scaling individual components. This can lead to inefficient resource utilization.
+
+    Technology Stack: A monolithic application typically uses a single technology stack, including a single programming language, framework, and database.
+
+    Development and Deployment: Development, testing, and deployment are often centralized processes. Changes to different parts of the application are managed together.
+
+    While monolithic architecture has been the traditional approach for many years and has some advantages, such as simplicity and ease of development, it also has drawbacks, especially as applications grow in size and complexity. Some of the challenges with monolithic architecture include:
+
+    Scalability Issues: It can be challenging to scale specific components of the application independently. Scaling usually involves replicating the entire application.
+
+    Limited Flexibility: Adding new features or technologies can be challenging as changes may impact the entire application.
+
+    Maintenance Challenges: Large codebases can be difficult to maintain and update. Changes to one part of the application may have unintended consequences in other areas.
+
+    Deployment Complexity: Deploying the entire application can be a complex and time-consuming process, especially for large-scale applications.
+
+    In contrast to monolithic architecture, microservices architecture aims to address some of these challenges by breaking down the application into smaller, independently deployable services.
+
+
+### What is the difference between Monolith and Microservice?
+
+    Monolithic Architecture:
+
+        Structure:
+            Single Unit: The entire application is developed, deployed, and scaled as a single, tightly integrated unit.
+            Tight Coupling: Components and modules within the application are tightly coupled, often sharing the same codebase, libraries, and databases.
+
+        Development and Deployment:
+            Centralized: Development, testing, and deployment processes are typically centralized.
+            Single Deployment Unit: Changes to any part of the application require redeploying the entire monolith.
+
+        Scalability:
+            Horizontal Scaling: To scale, the entire monolith is replicated, which can be inefficient in terms of resource utilization.
+        
+        Technology Stack:
+            Homogeneous Stack: A monolithic application usually uses a single technology stack, including a single programming language, framework, and database.
+
+        Flexibility:
+            Limited Flexibility: Adding new features or technologies can be challenging, as changes may impact the entire application.
+
+    Microservices Architecture:
+
+        Structure:
+            Decentralized Services: The application is broken down into small, independently deployable services that communicate with each other.
+            Loose Coupling: Services are loosely coupled, and each service has its own codebase, database, and dependencies.
+
+        Development and Deployment:
+
+            Decentralized Teams: Different teams can work on different services independently.
+            Independent Deployment: Each service can be developed, deployed, and scaled independently of other services.
+        
+        Scalability:
+            Granular Scaling: Specific services can be scaled independently based on demand, leading to more efficient resource utilization.
+        
+        Technology Stack:
+            Diverse Stack: Different services within a microservices architecture can use different technologies, languages, and databases.
+        
+        Flexibility:
+            Enhanced Flexibility: Adding new features or updating existing ones can be done more independently and with less impact on the overall system.
+        
+        Maintenance:
+            Easier Maintenance: Services are smaller and focused, making them easier to understand, maintain, and update.
+
+### Why do we need a useEffect Hook?
+
+    The `useEffect` hook in React is used to perform side effects in function components. Side effects can include data fetching, subscriptions, manual DOM manipulations, and more. It allows you to run code after the component has rendered or when certain dependencies have changed.
+
+    Here are some key reasons why the `useEffect` hook is important:
+
+    1. **Asynchronous Operations:**
+    - Many operations in a React component, such as data fetching or API calls, are asynchronous. The `useEffect` hook allows you to manage these asynchronous tasks.
+
+    2. **Component Lifecycle Management:**
+    - In class components, lifecycle methods like `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount` are used to manage side effects. `useEffect` combines these lifecycle methods into a single hook for better organization.
+
+    3. **Avoiding Infinite Loops:**
+    - By default, every render in a component triggers the execution of the `useEffect` function. It allows you to prevent infinite loops by specifying dependencies or using cleanup functions.
+
+    4. **Dependency Tracking:**
+    - You can pass an array of dependencies to `useEffect`. The effect will only re-run if any of the dependencies have changed. This helps in controlling when the effect should run.
+
+
+    5. **Clean-Up Operations:**
+    - `useEffect` can return a cleanup function, which will be executed when the component unmounts or when the dependencies change. This is useful for cleaning up resources or canceling subscriptions.
+
+
+    6. **Fetching Data on Mount:**
+    - `useEffect` is commonly used to fetch data when a component mounts. This ensures that the data is retrieved after the initial render.
+
+
+    7. **Global State Synchronization:**
+    - When dealing with global state management libraries like Redux, `useEffect` can be used to sync local component state with the global state.
+
+    In summary, `useEffect` is a fundamental hook in React that enables you to manage side effects and perform actions at specific points in the component lifecycle. It promotes cleaner code organization and better control over asynchronous and lifecycle-related tasks in functional components.
+
+### What is Optional Chaining?
+
+    Optional Chaining, represented by ?. in JavaScript, is a feature that allows you to access properties of an object in a more convenient and error-proof way.
+
+    Here’s how it works:
+
+    If the value before ?. is undefined or null, the evaluation stops and undefined is returned.
+    It provides a way to simplify accessing values through connected objects when it’s possible that a reference or function may be undefined or null.
+    For example, consider an object user with a nested structure. If we want to access user.dog.name, but not all users have a dog property, trying to access user.dog.name directly could result in an error. To prevent this, we can use optional chaining:
+
+    JavaScript
+    let value = user.dog?.name;
+    In this case, if user.dog is undefined or null, the expression short-circuits and undefined is returned. Otherwise, user.dog.name is returned.
+
+    Optional chaining also works with function calls and array indices. For example, if we have a function user1 and an object user2 with a method dog, we can call these safely with optional chaining:
+
+    JavaScript
+    let user1 = () => console.log("Alex");
+    let user2 = { dog() { console.log("I am Alex"); } }
+    let user3 = {};
+
+    user1?.(); // Calls the function if user1 is not undefined or null
+    user2.dog?.(); // Calls the method if user2.dog is not undefined or null
+    user3.dog?.(); // Does not result in an error even if user3.dog is undefined
+    In the above example, user3.dog?.() does not result in an error even though user3.dog is undefined. Instead, it short-circuits and returns undefined2.
+
+    This feature was introduced in ES2020 for JavaScript3, and similar concepts exist in other languages like Swift
+
+### What is Shimmer UI?
+
+    Shimmer UI is a technique used in web and mobile applications to improve the user experience during data loading or background processing1. It’s a version of the UI that doesn’t contain actual content, but instead mimics the layout and shapes of the content that will eventually appear1. It uses a gradient animation that creates a shimmering effect over the placeholders, giving the user a sense of motion and progress1.
+
+    Here are some benefits of using Shimmer UI1:
+
+        It improves the perceived performance of the app by making it seem faster and more responsive.
+        It reduces the cognitive load on the user by providing visual cues about the type and structure of the content that is being loaded.
+        It eliminates surprises and confusion by showing a consistent and predictable UI before and after loading.
+        It enhances the aesthetic appeal and user satisfaction by creating a smooth and elegant transition from loading to loaded.
+
+### What is the difference between JS expression and JS statement?
+    In JavaScript, expressions and statements are two fundamental concepts:
+
+    1. **Expression:**
+    - An expression is a piece of code that produces a value. It can be a combination of variables, operators, and literals that evaluates to a single value.
+    - Examples of expressions:
+        ```javascript
+        5 + 3         // Evaluates to 8
+        myVar         // Value of the variable myVar
+        func()        // Value returned by a function
+        ```
+
+    2. **Statement:**
+    - A statement is a larger piece of code that performs an action. It doesn't necessarily produce a value, but it can alter the state of the program.
+    - Examples of statements:
+        ```javascript
+        let x = 5;    // Declaration statement
+        if (x === 5) {
+        // Conditional statement
+        console.log('x is 5');
+        }
+        for (let i = 0; i < 3; i++) {
+        // Loop statement
+        console.log(i);
+        }
+        ```
+
+    In summary, an expression produces a value, while a statement performs an action. Expressions can be part of statements. For example, the condition in an `if` statement is an expression.
+
+### What is Conditional Rendering, explain with a code example
+
+    Conditional rendering in programming refers to the practice of displaying different content or components based on certain conditions. It allows you to control the appearance of elements in your application dynamically. In JavaScript and React, this often involves using conditional statements to determine what to render.
+
+    const Body = () => {
+        let filteredResult = []
+        let [restaurantList, setRestaurantList] = useState([]);
+        let [searchResut, setSearchResult] = useState([])
+
+        useEffect(() => {
+            fetchData();
+        }, [])
+
+        const fetchData = async () => {
+            const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING");
+
+            const json = await data.json()
+
+            setRestaurantList(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
+            ?.restaurants)
+            setSearchResult(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
+            ?.restaurants)
+        }
+
+        return restaurantList?.length == 0 ? <Shimmer /> : (
+            <div className="body">
+                <div className="search-box">
+                    <input
+                    type="text"
+                    onChange={(e) => {
+                        let inputValue = e.target.value.toLocaleLowerCase();
+                        filteredList = restaurantList.filter((restautant) => restautant.info.name.toLocaleLowerCase().includes(inputValue))
+
+                    }}
+                    />
+                    <button onClick={() => {
+                    setSearchResult(filteredList)
+                    }}
+                    >Search</button>
+                </div>
+                <div className="filter">
+                    <button className="filter-btn" >
+                    Top Rated Restaurant
+                    </button>
+                </div>
+                <div className="res-container">
+                    {searchResut?.map((restaurant) => (
+                    <RestaurantCard key={restaurant?.info?.id} resData={restaurant} />
+                    ))}
+                </div>
+            </div>
+        )
+    };
+
+    return restaurantList?.length == 0 ? <Shimmer /> : (...)
+    this line is a conditional rendering when the value of restaurantList is eqauls to 0 it will render Shimer Component other wise it will render the div element
+
+### What is CORS?
+
+    CORS stands for Cross-Origin Resource Sharing. It is a security feature implemented by web browsers to control how web pages in one domain can request and interact with resources hosted on another domain. The same-origin policy is a security measure that restricts web pages from making requests to a different domain than the one that served the web page.
+
+    CORS allows servers to specify who can access its resources and under what conditions. It enables more secure cross-origin requests while still allowing legitimate interactions between different origins.
+
+    Here's a brief overview of how CORS works:
+
+    1. **Origin**: An origin is composed of the scheme (e.g., http or https), domain, and port of a URL. For example, `https://www.example.com`.
+
+    2. **Cross-Origin Requests**: When a web page at one origin makes a request for a resource from another origin (cross-origin request), the browser sends an HTTP request that includes an Origin header indicating the origin of the requesting site.
+
+    3. **Server Response**: The server at the target origin can include CORS headers in its response to indicate which origins are allowed to access its resources. The headers include:
+    - `Access-Control-Allow-Origin`: Specifies which origin(s) are allowed to access the resource. It can be a specific origin or a wildcard (`*`) indicating any origin.
+    - Other headers such as `Access-Control-Allow-Methods`, `Access-Control-Allow-Headers`, etc.
+
+    4. **Preflight Requests**: Certain types of requests (e.g., those with custom headers or using specific HTTP methods) trigger a preflight request. The browser sends an HTTP OPTIONS request to the server to check whether the actual request is allowed.
+
+    CORS helps prevent unauthorized cross-origin requests and enhances the security of web applications. It is crucial in the context of modern web development, where resources are often distributed across different domains (e.g., APIs hosted on separate servers).
+
+### What is async and await?
+
+    In JavaScript, `async` and `await` are special syntax used to work with promises in a more comfortable and readable fashion.
+
+    The `async` keyword can be placed before a function. This means the function will always return a promise. If a value is returned from the function, it will be wrapped in a resolved promise automatically. Here's an example:
+
+    ```javascript
+    async function f() {
+    return 1;
+    }
+    f().then(alert); // 1
+    ```
+
+    In the above example, the function `f()` returns a resolved promise with the result of `1`.
+
+    The `await` keyword can only be used inside an `async` function. It makes JavaScript wait until a promise settles and returns its result. Here's an example:
+
+    ```javascript
+    async function f() {
+    let promise = new Promise((resolve, reject) => {
+        setTimeout(() => resolve("done!"), 1000)
+    });
+    let result = await promise; // wait until the promise resolves
+    alert(result); // "done!"
+    }
+    f();
+    ```
+
+    In the above example, the function execution pauses at the line with `await` and resumes when the promise settles, with `result` becoming its result. So the code shows "done!" in one second.
+
+    These features were introduced in ES2017 for JavaScript, and they make promises easier to write and handle.
+
+### What is the use of 'const json = await data.json(); ' in getRestaurants()
+
+    In the provided code, the line `const json = await data.json();` is responsible for parsing the JSON response from the API. Let's break down the key steps:
+
+    1. **Fetch Data:**
+    ```javascript
+    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING");
+    ```
+    This line uses the `fetch` function to make an asynchronous HTTP request to the specified URL. The `await` keyword is used to wait for the promise returned by `fetch` to resolve, and it holds the response in the `data` variable.
+
+    2. **Parse JSON:**
+    ```javascript
+    const json = await data.json();
+    ```
+    Here, `data.json()` is another asynchronous operation that returns a promise. The `await` keyword is used to wait for this promise to resolve, and it parses the JSON content of the response. The result is stored in the `json` variable.
+
+    After parsing, `json` holds the JavaScript object representation of the JSON data returned by the API.
+
+    3. **Update State:**
+    ```javascript
+    setRestaurantList(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setSearchResult(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    ```
+    The parsed data is then used to update the state variables `restaurantList` and `searchResult` using the `setRestaurantList` and `setSearchResult` functions, respectively.
+
+    In summary, `const json = await data.json();` is a crucial step that transforms the raw response data into a usable JavaScript object, allowing you to access and manipulate the data in a more convenient format. It's a common pattern when working with APIs that return JSON data.

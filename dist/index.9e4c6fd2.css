@@ -1,0 +1,66 @@
+.header {
+  border: 1px solid #000;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.header .logo-container .logo {
+  width: 100px;
+}
+
+.header .nav-items > ul {
+  font-size: 24px;
+  list-style-type: none;
+  display: flex;
+}
+
+.header .nav-items > ul > li {
+  margin: 10px;
+  padding: 10px;
+}
+
+.body .res-container {
+  flex-wrap: wrap;
+  padding: 10px;
+  display: flex;
+}
+
+.res-card {
+  border: 1px solid #0000;
+  border-radius: 5px;
+  width: 200px;
+  margin: 5px;
+  padding: 10px;
+}
+
+.res-card:hover {
+  cursor: pointer;
+  border: 1px solid red;
+}
+
+.res-card > img {
+  border-radius: 5px;
+  width: 100%;
+}
+
+.filter-btn {
+  cursor: pointer;
+  margin: 10px;
+}
+
+.shimmers-containers {
+  flex-wrap: wrap;
+  padding: 10px;
+  display: flex;
+}
+
+.shimmers-containers .shimmers {
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  width: 200px;
+  height: 400px;
+  margin: 5px;
+}
+
+/*# sourceMappingURL=index.9e4c6fd2.css.map */
