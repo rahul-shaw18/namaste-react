@@ -30,6 +30,7 @@
   border: 1px solid #0000;
   border-radius: 5px;
   width: 200px;
+  height: 480px;
   margin: 5px;
   padding: 10px;
 }
@@ -61,6 +62,11 @@
   width: 200px;
   height: 400px;
   margin: 5px;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=index.9e4c6fd2.css.map */

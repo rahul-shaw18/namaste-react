@@ -788,3 +788,89 @@ Yes we can use React without ES6. So to make it work we to use React.createEleme
     The parsed data is then used to update the state variables `restaurantList` and `searchResult` using the `setRestaurantList` and `setSearchResult` functions, respectively.
 
     In summary, `const json = await data.json();` is a crucial step that transforms the raw response data into a usable JavaScript object, allowing you to access and manipulate the data in a more convenient format. It's a common pattern when working with APIs that return JSON data.
+
+
+## Episode 7
+
+### What are various ways to add images into our App? Explain with code examples
+
+    In React, you can add images using the `<img>` tag or by importing images directly into your JavaScript code. Here's how you can do it:
+
+    1. Using `<img>` tag:
+
+        ```jsx
+        // ExampleComponent.jsx
+        import React from 'react';
+
+        const ExampleComponent = () => {
+        return (
+            <div>
+                <h1>Your React App</h1>
+                <img src="/path/to/your/image.jpg" alt="Description" />
+            </div>
+        );
+        }
+
+        export default ExampleComponent;
+        ```
+
+        Make sure to replace `/path/to/your/image.jpg` with the correct path to your image.
+
+    2. Importing Images in JavaScript (using webpack):
+
+        If you are using a bundler like webpack, you can import images directly into your JavaScript code. Ensure that you have the necessary loaders configured (like `file-loader` or `url-loader`).
+
+        ```jsx
+        // ExampleComponent.jsx
+        import React from 'react';
+        import myImage from './path/to/your/image.jpg'; // Import the image
+
+        const ExampleComponent = () => {
+        return (
+            <div>
+                <h1>Your React App</h1>
+                <img src={myImage} alt="Description" />
+            </div>
+        );
+        }
+
+        export default ExampleComponent;
+        ```
+
+### What would happen if we do console.log(useState())?
+
+    when we do console.log of useState() it will give us [ undefined, f ]
+    undefined: the initia value is undefined.
+    f: it is the function to provide the value to variable and also it will refresh the component.
+
+### How will useEffect behave if we don't add a dependency array ?
+
+    if we do not add dependency array to useEffect(()=>{}) it will be called every time the component is rendered
+    
+### What is SPA?
+
+    SPA stands for single page application, it means it will not refresh the page whenever we will do routing in react we use react-routing-dom npm package for doing routing, in place of anchor tag which is default for HTML routing we use Link component which is provided by react-routing-dom package
+
+### What is difference between Client Side Routing and Server Side Routing?
+
+    Server-side routing and client-side routing are two different approaches to handling web page requests and they each have their own advantages and disadvantages.
+
+    Server-Side Routing:
+
+        When a user clicks on a link, the URL changes and a new GET request is sent to the server.
+        The server processes the request and sends a new document (usually HTML) as a response.
+        The browser discards the old webpage altogether, and displays the newly downloaded one.
+
+        Pros: A server-side route will only request the data that’s needed. No more, no less.
+        Cons: Every request results in a full-page refresh. That means that unnecessary data is being requested. A header and a footer of a webpage often stays the same. This isn’t something you would want to request from the server again.
+
+    Client-Side Routing:
+
+        When a user clicks on a link, the URL changes but the request to the server is prevented.
+        The adjustment to the URL will result in a changed state of the application. The changed state will ultimately result in a different view of the webpage.
+        It is important to note that the whole page won’t refresh when using client-side routing. There are just some elements inside the application that will change.
+        
+        Pros: Because less data is processed, routing between views is generally faster.
+        Cons: The whole website or web-application needs to be loaded on the first request. That’s why the initial loading time usually takes longer.
+
+    In summary, server-side routing involves making a request to the server each time there is a need to rerender the application, while client-side routing handles routing internally by the JavaScript loaded on the page, and only makes a request to the server when the application is initially loaded.
