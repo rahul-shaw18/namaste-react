@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
 
   // let [btnStatus, setBtnStatus] = useState(false)
-  console.log(useState())
+  // console.log(useState())
 
   return (
     <div className="header">

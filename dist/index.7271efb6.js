@@ -27248,11 +27248,9 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _constants = require("../utils/constants");
 var _reactRouterDom = require("react-router-dom");
-var _s = $RefreshSig$();
 const Header = ()=>{
-    _s();
     // let [btnStatus, setBtnStatus] = useState(false)
-    console.log((0, _react.useState)());
+    // console.log(useState())
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "header",
         children: [
@@ -27343,7 +27341,6 @@ const Header = ()=>{
         columnNumber: 5
     }, undefined);
 };
-_s(Header, "VhlnxxH3xh7Qs17KADUJ8wvRSZs=");
 _c = Header;
 exports.default = Header;
 var _c;
@@ -34222,12 +34219,33 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _user = require("./User");
+var _userDefault = parcelHelpers.interopDefault(_user);
+var _userClass = require("./UserClass");
+var _userClassDefault = parcelHelpers.interopDefault(_userClass);
 const About = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-        children: "About"
-    }, void 0, false, {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                children: "About"
+            }, void 0, false, {
+                fileName: "src/components/About.js",
+                lineNumber: 7,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _userClassDefault.default), {
+                name: "Rahul Shaw (class)",
+                location: "Kolkata",
+                contact: "rahul.shaw505@gmail.com"
+            }, void 0, false, {
+                fileName: "src/components/About.js",
+                lineNumber: 9,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
         fileName: "src/components/About.js",
-        lineNumber: 3,
+        lineNumber: 6,
         columnNumber: 9
     }, undefined);
 };
@@ -34241,7 +34259,179 @@ $RefreshReg$(_c, "About");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cgAOG":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./User":"4iQHT","./UserClass":"Vp2Fx"}],"4iQHT":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$9c32 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$9c32.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _s = $RefreshSig$();
+const User = ({ name, location, contact })=>{
+    _s();
+    const [count, setCount] = (0, _react.useState)(0);
+    (0, _react.useEffect)(()=>{
+        fetchData();
+    }, []);
+    const fetchData = async ()=>{
+        const data = await fetch("https://api.github.com/users/rahul-shaw18");
+        const json = await data.json();
+        console.log(json);
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "user-card",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                onClick: ()=>{
+                    setCount(count + 1);
+                },
+                children: [
+                    "Count: ",
+                    count
+                ]
+            }, void 0, true, {
+                fileName: "src/components/User.js",
+                lineNumber: 18,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                children: [
+                    "Name: ",
+                    name
+                ]
+            }, void 0, true, {
+                fileName: "src/components/User.js",
+                lineNumber: 21,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: [
+                    "Location: ",
+                    location
+                ]
+            }, void 0, true, {
+                fileName: "src/components/User.js",
+                lineNumber: 22,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                children: [
+                    "Contact: ",
+                    contact
+                ]
+            }, void 0, true, {
+                fileName: "src/components/User.js",
+                lineNumber: 23,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/User.js",
+        lineNumber: 17,
+        columnNumber: 9
+    }, undefined);
+};
+_s(User, "/xL7qdScToREtqzbt5GZ1kHtYjQ=");
+_c = User;
+exports.default = User;
+var _c;
+$RefreshReg$(_c, "User");
+
+  $parcel$ReactRefreshHelpers$9c32.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"Vp2Fx":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$46df = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$46df.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+class UserClass extends (0, _reactDefault.default).Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            userInfo: {
+                name: "Dummy",
+                location: "Default"
+            }
+        };
+    }
+    async componentDidMount() {
+        const data = await fetch("https://api.github.com/users/rahul-shaw18");
+        const json = await data.json();
+        console.log(json);
+        this.setState({
+            userInfo: json
+        });
+    }
+    componentDidUpdate() {
+        this.intervalId = setInterval(()=>{
+            this.setState((prevState)=>({
+                    seconds: prevState.seconds + 1
+                }));
+        }, 1000);
+    }
+    componentWillUnmount() {}
+    render() {
+        const { name, location } = this.state.userInfo;
+        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "user-card",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                    children: [
+                        "Name: ",
+                        name
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/UserClass.js",
+                    lineNumber: 39,
+                    columnNumber: 17
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                    children: [
+                        "Location: ",
+                        location
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/UserClass.js",
+                    lineNumber: 40,
+                    columnNumber: 17
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                    children: "Contact: contact"
+                }, void 0, false, {
+                    fileName: "src/components/UserClass.js",
+                    lineNumber: 41,
+                    columnNumber: 17
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/UserClass.js",
+            lineNumber: 32,
+            columnNumber: 13
+        }, this);
+    }
+}
+exports.default = UserClass;
+
+  $parcel$ReactRefreshHelpers$46df.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cgAOG":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$ee46 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

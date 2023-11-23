@@ -69,4 +69,9 @@ a {
   text-decoration: none;
 }
 
+.user-card {
+  border: 1px solid #000;
+  padding: 10px;
+}
+
 /*# sourceMappingURL=index.9e4c6fd2.css.map */
