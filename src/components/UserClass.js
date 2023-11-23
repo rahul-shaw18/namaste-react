@@ -27,7 +27,7 @@ class UserClass extends React.Component {
      }
     componentWillUnmount(){}
     render() {
-        const { name, location } = this.state.userInfo
+        const { name, login, url } = this.state.userInfo
         return (
             <div className="user-card">
                 {/* <h1 >Count: {count}</h1>
@@ -37,8 +37,8 @@ class UserClass extends React.Component {
                     })
                 }}>Count increment</button> */}
                 <h2>Name: {name}</h2>
-                <h3>Location: {location}</h3>
-                <h4>Contact: contact</h4>
+                <h3>login: {login}</h3>
+                <h4>URL: {url}</h4>
             </div>
         )
     }

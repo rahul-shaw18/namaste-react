@@ -10,7 +10,6 @@ const RestaurantCard = (props) => {
     resData?.info; // optional chaining
   const { deliveryTime } = resData?.info?.sla;
 
-  console.log(resData?.info)
   return (
     <div className="res-card" style={styleCard}>
       <img src="" alt="" srcSet={

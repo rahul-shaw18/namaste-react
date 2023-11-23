@@ -74,4 +74,12 @@ a {
   padding: 10px;
 }
 
+.online {
+  background-color: green;
+}
+
+.offline {
+  background-color: red;
+}
+
 /*# sourceMappingURL=index.9e4c6fd2.css.map */

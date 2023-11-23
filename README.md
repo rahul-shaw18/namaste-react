@@ -1002,3 +1002,93 @@ Yes we can use React without ES6. So to make it work we to use React.createEleme
     ```
 
     In this example, `componentDidMount` starts a timer to fetch data from an API every second. If the component is unmounted and the timer is not cleared, it will continue to run and attempt to call `fetchDataFromAPI` on a component that no longer exists, which would cause an error. To prevent this, `componentWillUnmount` is used to clear the timer just before the component is unmounted, preventing the error. This is why `componentWillUnmount` is important and where it can be used. It helps in avoiding memory leaks in your application.
+
+
+### When and why do we need lazy()?
+
+    In React, `React.lazy()` is a function that allows you to render a dynamic import as a regular component. It makes it possible to load components lazily, which can help to minimize the size of your bundle and improve load time on slower networks.
+
+    Here's when and why you might want to use `React.lazy()`:
+
+    1. **Performance optimization**: If your app has a lot of routes and not all of them are necessary for the initial render, you can use `React.lazy()` to only load the components as they are needed. This can significantly improve the performance of your app, especially on slower networks.
+
+    2. **Code splitting**: `React.lazy()` allows you to split your code into smaller chunks that can be loaded on demand. This can help to reduce the size of your initial bundle and speed up the load time of your app.
+
+    Here's an example of how you might use `React.lazy()`:
+
+    steps to inclue lazy loading in your application
+
+    1) import React, { lazy, Suspense } from "react";
+
+    2) create a const variable and also note the variable name shoud be the name of Component or it will throw an error like Grocery is not defined
+    const Grocery = lazy(() => import("./components/Grocery"))
+    const About = lazy(() => import("./components/About"))
+    const Body = lazy(() => import("./components/Body"))
+    const Contact = lazy(() => import("./components/Contact"))
+    const RestaurantMenu = lazy(()=>import("./components/RestaurantMenu"))
+
+    3) In your appRouter in element add Suspence Component and inside it pass the Component which you want to use as lazily
+
+    ``const appRouter = createBrowserRouter([
+        {
+            path: '/', element: <AppLayout />, children: [
+            { path: '/', element: <Suspense><Body /> </Suspense> },
+            { path: '/about', element: <Suspense><About /> </Suspense>},
+            { path: '/grocery', element: <Suspense fallback={<Shimmer />}><Grocery /></Suspense> },
+            { path: '/contact', element: <Suspense><Contact /> </Suspense> },
+            { path: '/restaurant/:resId', element:<Suspense><RestaurantMenu /> </Suspense>  }
+            ], errorElement: <Error />
+        },
+
+    ])``
+
+### What is suspense?
+        In the context of React, Suspense is a component that lets you specify a fallback component to display while waiting for some asynchronous operation to finish, such as data fetching or code splitting.
+
+        in the above code when we go to grocery route then Suppence Component will diplay the Shimmer Component until the required component that is Grocery is loader, Shimmer Component is loaded by fallback attributes of Suspence Component
+
+        suspense is a technique that allows a program or a system to pause the execution of a task or operation until a specific consition is met. it is in asynchronous programming scenaraos where operations might take some time to complete such as fetching data from a network or loading resources.
+
+### Why we got this error : A component suspended while responding to synchronous input. This will cause the UI to be replaced with a       loading indicator. To fix, updates that suspend should be wrapped with startTransition? How does suspense fix this error?
+
+    In React, the Suspense component allows you to specify a fallback component (like a loading message) that will be displayed while waiting for some asynchronous operation to complete. This could be a dynamic import (code splitting) or a data fetch. Once the asynchronous operation completes, the Suspense component will render the actual component.
+
+    Suspense is a new feature in React that allows components to interrupt or "suspend" rendering in order to wait for some asynchronous resource (such as code, images or data) to be loaded; when a component "suspends", it indicates to React that the component isn't "ready" to be rendered yet, and won't be until the asynchronous resource it's waiting for is loaded. When the resource finally loads, React will try to render the component again.
+    When a component is suspended, we need to render a fallback in place of the component while we wait for it to become "ready". In order to do so, we use the Suspense component provided by React
+    eg : 
+
+    <Suspense fallback={<h1>Loading..</h1>}>
+        <Grocery>
+    </Suspense>
+
+
+### When do we and why do we need suspense?
+
+    In React, `Suspense` is a component that lets you specify a fallback component to display while waiting for some asynchronous operation to finish, such as data fetching or code splitting. 
+
+    Here's when and why you might want to use `Suspense`:
+
+    1. **Code Splitting**: If your app has a lot of routes and not all of them are necessary for the initial render, you can use `Suspense` to only load the components as they are needed. This can significantly improve the performance of your app, especially on slower networks.
+
+    2. **Data Fetching**: `Suspense` allows you to "wait" for some data to load and declaratively specify a loading state (like a spinner or fallback UI). This can help improve the user experience by providing immediate feedback while the data is loading.
+
+    Here's an example of how you might use `Suspense`:
+
+    ```jsx
+    import React, { Suspense } from 'react';
+
+    const OtherComponent = React.lazy(() => import('./OtherComponent'));
+
+    function MyComponent() {
+    return (
+        <div>
+        <Suspense fallback={<div>Loading...</div>}>
+            <OtherComponent />
+        </Suspense>
+        </div>
+    );
+    }
+    ```
+
+    In this example, `React.lazy()` is used to load `OtherComponent` only when it is needed. The `Suspense` component is used to display some fallback content (in this case, "Loading...") while `OtherComponent` is being loaded. Once `OtherComponent` has been loaded, it is rendered as a normal component.
+
