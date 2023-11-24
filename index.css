@@ -1,5 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 /* Header Component  */
-.header {
+/* .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,38 +27,38 @@
 .header .nav-items > ul > li {
   padding: 10px;
   margin: 10px;
-}
+} */
 
 /* Body Component */
-.body .res-container {
+/* .body .res-container {
   display: flex;
 
   padding: 10px;
   flex-wrap: wrap;
-}
+} */
 
 /* Restaurant Crad Component */
 
-.res-card {
+/* .res-card {
   width: 200px;
   height: 480px;
   border: 1px solid transparent;
   border-radius: 5px;
   margin: 5px;
   padding: 10px;
-}
+} */
 
-.res-card:hover {
+/* .res-card:hover {
   cursor: pointer;
   border: 1px solid red;
-}
+} */
 
-.res-card > img {
+/* .res-card > img {
   border-radius: 5px;
   width: 100%;
-}
+} */
 
-.filter-btn {
+/* .filter-btn {
   margin: 10px;
   cursor: pointer;
 }
@@ -86,4 +91,4 @@ a {
 }
 .offline {
   background-color: red;
-}
+} */
