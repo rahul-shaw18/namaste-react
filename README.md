@@ -1092,3 +1092,39 @@ Yes we can use React without ES6. So to make it work we to use React.createEleme
 
     In this example, `React.lazy()` is used to load `OtherComponent` only when it is needed. The `Suspense` component is used to display some fallback content (in this case, "Loading...") while `OtherComponent` is being loaded. Once `OtherComponent` has been loaded, it is rendered as a normal component.
 
+## Episode
+
+### What is prop drilling?
+
+    Prop drilling, also known as “threading”, is a common pattern in React where data is passed from a parent component down to its child components via props1. This process is necessary when a child component deep in the component tree needs to access data from an ancestor component.
+
+### What is lifting the state up?
+
+    Lifting state up” is a common pattern in React that is used to share state between multiple components. Instead of trying to sync the state between different components, you “lift the state up” to their closest common ancestor. For example, instead of maintaining separate state variables in two child components, you would consolidate the state in their parent component and pass the state values and setter functions down to the children via props.
+
+### What are Context Provider and Context Consumer?
+
+    In React, the Context API is used to share data that can be considered "global" for a tree of React components.
+
+    - **Context.Provider**: The `Context.Provider` is a React component that allows consuming components to subscribe to context changes. It accepts a `value` prop to be passed to consuming components that are descendants of this `Provider`. When `React.createContext` is called, it returns an object with a `Provider` and a `Consumer`. Here's an example:
+
+    ```jsx
+    <SomeContext.Provider value={/* some value */}>
+    ```
+
+    - **Context.Consumer**: The `Context.Consumer` is a React component that subscribes to context changes⁴. This lets you subscribe to a context within a function component. The `Consumer` component requires a function as a child which receives the current context value and returns a React node. Here's an example:
+
+    ```jsx
+    <SomeContext.Consumer>
+    {value => /* render something based on the context value */}
+    </SomeContext.Consumer>
+    ```
+
+    The `value` argument passed to the function will be equal to the `value` prop of the closest `Provider` for this context above in the tree. If there is no `Provider` for this context above, the `value` argument will be equal to the `defaultValue` that was passed to `createContext()`.
+
+    The `useContext` Hook is also commonly used to access the context value. It's a simpler way to consume context and can be used in functional components.
+
+### If you don't pass a value to the provider does it take the default value?
+
+    Yes, if you don’t pass a value to the Context.Provider, it will use the default value that was passed to createContext() when creating the context. The default value is only used when a component does not have a matching Provider above it in the tree. This can be helpful for testing components in isolation without wrapping them. However, in most cases, you would want to control the context value through the Provider to ensure your components are receiving the correct data.
+
