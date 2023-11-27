@@ -17,23 +17,30 @@ const About = lazy(() => import("./components/About"));
 const Body = lazy(() => import("./components/Body"));
 const Contact = lazy(() => import("./components/Contact"));
 const RestaurantMenu = lazy(() => import("./components/RestaurantMenu"));
+const Cart = lazy (()=> import("./components/Cart"))
+
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+// import Cart from "./components/Cart";
 
 const AppLayout = () => {
-  const [userName, setUserName] = useState()
+  const [userName, setUserName] = useState();
   useEffect(() => {
-    fetchData()
-  }, [])
-  
-  const fetchData=() => {
-    setUserName("Lovey Shaw")
-  }
+    fetchData();
+  }, []);
+
+  const fetchData = () => {
+    setUserName("Lovey Shaw");
+  };
   return (
-    <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
-      <div className="app">
-        <Header />
-        <Outlet />
-      </div>
-    </UserContext.Provider>
+    <Provider store={appStore}>
+      <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+        <div className="app">
+          <Header />
+          <Outlet />
+        </div>
+      </UserContext.Provider>
+    </Provider>
   );
 };
 
@@ -71,6 +78,14 @@ const appRouter = createBrowserRouter([
         element: (
           <Suspense>
             <Contact />{" "}
+          </Suspense>
+        ),
+      },
+      {
+        path: "/cart",
+        element: (
+          <Suspense>
+            <Cart />{" "}
           </Suspense>
         ),
       },
